@@ -12,8 +12,6 @@
 # express or implied.  See the License for the specific language
 # governing permissions and limitations under the License.
  
- 
-
 import sys
 import os
 import time
@@ -128,10 +126,12 @@ class StreamMonitor(tweepy.StreamListener):
     	    print('@{u:s} Said:  {m:s}'.format(u=screen_name, m=text))
             for file_name in files:
                 print('display: {f:s}'.format(f=file_name))
-                display_file(epd, file_name)
+ 
+               display_file(epd, file_name)
               
     def display_file(epd, file_name):
             """display centre of image then resized image"""
+
  
     image = Image.open(file_name)
     image = ImageOps.grayscale(image)
@@ -159,6 +159,7 @@ class StreamMonitor(tweepy.StreamListener):
     time.sleep(3) # delay in seconds
  
     """This section just prints the Twitter Feed"""
+
     
     else:
         print('@{u:s} Said:  {m:s}'.format(u=screen_name, m=text))
